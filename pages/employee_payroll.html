@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap ">
     <link rel="stylesheet" href="\css\employee_payroll.css">
     <title>Employee payroll form</title>
-    <script defer src="\js\employee_payroll.js"></script>
+    <script type="text/javascript"  src="\js\employee_payroll.js"></script>
+    <script type="text/javascript"  src="\js\employee_payroll_data.js"></script>
     <title>Document</title>
 </head>
 
@@ -22,13 +23,20 @@
             <span class="emp-text emp-payroll">PAYROLL</span>
         </div>
     </header>
-    <div class="form-content">
-        <form class="form" action="#" onsubmit="save(event)";return false">
+    <div id="formId" class="form-content">
+        <form class="form" action="#" onsubmit="save(event)" onreset="resetForm()" >
             <!--Ability to create a Form Header and the Input Text Element for Name-->
-            <div class="form-head">Employee payroll form</div>
+            <div class="form-head"> Employee Payroll form </div>
+            
             <div class="row-content">
+        
                 <label class="label text" for="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="your name" required>
+                
+                <input class="input" type="text" id="name" name="name"
+            
+                    placeholder="Your name.." required>
+        
+                <error-output class="text-error" for="text"></error-output>
             </div>
 
             <!--Ability to specify the Profile Pic in the Form-->
@@ -120,6 +128,7 @@
                 <option value="29">29</option>
                 <option value="30">30</option>
                 <option value="31">31</option>
+                
             </select>
                     <select name="Month" id="month">
                 <option value="Jan">January</option>
