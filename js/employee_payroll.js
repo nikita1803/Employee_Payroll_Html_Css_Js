@@ -19,22 +19,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         } catch (e) {
             textError.textContent = e;
         }
-    });
-    startDate.addEventListener('input', function() {
-        if (startDate.value.length == 0) {
-            textError.textContent = "";
-            return;
-        }
-        try {
-            let employeePayrollData = new EmployeePayrollData();
-            employeePayrollData.startDate = startDate.value;
-            textError.textContent = "";
-        } catch (e) {
-            textError.textContent = e;
-        }
-    });
-
-    
+    });  
 });
 
 const save = () => {
@@ -72,7 +57,7 @@ const createEmployeepayrolldata = () => {
     employeePayrollData.note = getInputValueById('#notes');
     let date = getInputValueById('#day') + " " + getInputValueById('#month') + " " +
         getInputValueById('#year');
-   if( employeePayrollData.StartDate = Date.parse(date))
+    employeePayrollData.date = Date.parse(date);
     alert(employeePayrollData.toString());
     return employeePayrollData;
 }
